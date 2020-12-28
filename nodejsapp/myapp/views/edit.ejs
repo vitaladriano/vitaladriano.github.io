@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+	<head>
+
+		<!-- ==============================================
+		Title and Meta Tags
+		=============================================== -->
+		<meta charset="utf-8">
+		<title>register</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		
+		<!-- ==============================================
+		CSS
+		=============================================== --> 
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootnavbar.css">
+    <link rel="stylesheet" type="text/css" href="css/slidingimages.css">
+		<link rel="stylesheet" href="css/bootstrapValidator.min.css">
+		<link rel="stylesheet" href="css/tax.css">
+		
+		
+		
+		<!-- ==============================================
+		Feauture Detection
+		=============================================== -->
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+          <script src="js/respond.min.js"></script>
+        <![endif]-->
+     </head>
+     <style type="text/css">
+         form{
+            margin-left: 150px;
+         }
+     </style>
+
+<body>
+	<!-- ==============================================
+	 Feauture Detection
+	 =============================================== -->
+     
+		
+     <!-- ==============================================
+	 Athlete register section Section
+	 ================================================ -->
+
+
+  <!-- navigation bar  --> 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="main_navbar">
+        <a class="navbar-brand" href="#">ATHLETE REGESTRATION</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/index"><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
+                </li>
+                                     <li class="nav-item">
+                    <a class="nav-link" href="/form">Athlete Register</a>
+                </li>
+                                     <li class="nav-item">
+                    <a class="nav-link" href="#">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                 </ul>
+            <ul class="navbar-nav ml-auto">
+                  
+                 <li class="nav-item">
+                    <a class="nav-link" href="/admin">AdminLogin</a>
+                </li>
+             
+                
+            </ul>
+            
+        </div>
+    </nav>
+   
+	  <section class="login" id="login">
+	   <div class="container">
+	    <div class="row">
+		  <div class="col-lg-6 col-lg-offset-4"><br><br><br>
+				<h1 class="text-center">ATHLETE REGISTER FORM</h1>
+				<br>
+				<form method="post" id="loginform"> 
+				   <div class="form-group">
+<label>First Name</label>
+<input class="form-control" type="text" name="firstname"  maxlength="50" value="<%= user.firstname %>" >
+</div>
+<div class="form-group">
+<label>last Name</label>
+<input class="form-control" type="text" name="lastname"  maxlength="50" value="<%= user.lastname %>" >
+</div>
+<div class="form-group">
+<label>phone Number</label>
+<input class="form-control" type="text" name="phone"  maxlength="20" value="<%= user.phoneno %>" >
+</div>
+<div class="form-group">
+<label>Email</label>
+<input class="form-control" type="text" name="phoneno"  maxlength="20" value="<%= user.email %>" >
+</div>
+<div class="form-group">
+<label>Sport Activity</label>
+<input class="form-control" type="email" name="email"  maxlength="100" value="<%= user.sports %>" >
+
+</div>
+ <div>
+                  <br/>
+ <button type="submit" name="register" id="btn" class="btn btn-large btn-success full-width"><i class="glyphicon glyphicon-upload"></i>&nbsp;&nbsp;<b>SUBMIT</b></button><br></br>
+ 
+     </div>
+				</form>
+			</div><!-- /.col-lg-7 -->
+		 </div><!-- /.row -->	
+	  </div><!-- /.container -->
+	</section>
+	<!--==============================================
+	footer
+	=================================================-->
+	
+	<!-- ==============================================
+	 Scripts
+	 =============================================== -->
+	 
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/waypoints.min.js"></script>
+	<script src="js/respond.min.js"></script>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/retina.js"></script>
+	<script src="js/application.js"></script>
+	<script src="js/bootstrapValidator.min.js"></script>
+	<script src="js/taxifleet.js"></script>
+	<script>
+	 $(document).ready(function() {
+    $('#loginform').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+           firstname: {
+                message: 'The First name is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'The First name is required and cannot be empty'
+                    },
+                    stringLength: {
+                        min: 2,
+                        max: 30,
+                        message: 'The First name must be more than 2 and less than 30 characters long'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z]+$/,
+                        message: 'The First name can only consist of alphabetical'
+                    }
+                }
+            },
+           lastname: {
+                message: 'The Last name is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'The Last name is required and cannot be empty'
+                    },
+                    stringLength: {
+                        min: 2,
+                        max: 30,
+                        message: 'The Last name must be more than 2 and less than 30 characters long'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z]+$/,
+                        message: 'The Last name can only consist of alphabetical'
+                    }
+                }
+            },
+            username: {
+                message: 'The User name is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'The User name is required and cannot be empty'
+                    },
+                    stringLength: {
+                        min: 2,
+                        max: 30,
+                        message: 'The User name must be more than 2 and less than 30 characters long'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z]+$/,
+                        message: 'The User name can only consist of alphabetical'
+                    }
+                }
+            },
+             phone: {
+                validators: {
+                    digits: {
+                        message: 'The Phone Number can contain digits only'
+                    },
+					stringLength: {
+                        min: 10,
+						max: 10,
+                        message: 'The Phone Number must have at least 10 characters'
+                    },
+                    notEmpty: {
+                        message: 'The Phone Number is required'
+                    },
+					 regexp: {
+                        regexp: /^[0-9]+$/,
+                        message: 'The Phone Number can only consist of Numbers'
+                    }
+                }
+            },
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'The email is required and cannot be empty'
+                    },
+                    emailAddress: {
+                        message: 'The input is not a valid email address'
+                    }
+                }
+            },
+           password: {
+                validators: {
+                    notEmpty: {
+                        message: 'The password is required and cannot be empty'
+                    },
+                   
+                    stringLength: {
+                        min: 4,
+                        message: 'The password must have at least 4 characters'
+                    }
+                }
+            },
+            confirm_password: {
+                validators: {
+                    notEmpty: {
+                        message: 'The password is required and cannot be empty'
+                    },
+                    same: {
+                        field: 'password',
+                        message: 'The password must same as username'
+                    },
+                    stringLength: {
+                        min: 4,
+                        message: 'The confirm password must have at least 4 characters'
+                    }
+                }
+            },
+        }
+    });
+});
+	</script>
+</body>
+</html>
+
+
+

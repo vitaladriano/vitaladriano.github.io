@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>userlist</title>
+</head>
+<body>
+    <h1>List of Users Data</h1>
+    <a href="/form">Add New User</a>
+    <table>
+        <tr>
+            <td>No.</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>City</td>
+            <td>Delete</td>
+      
+        </tr>
+        <%users.forEach(function(user) { %>
+        <tr>
+            <td><%= user.id%></td>
+            <td><%= user.firstname%></td>
+            <td><%= user.lastname%></td>
+            <td><%= user.email%></td>
+            <td><%= user.city%></td>
+            <td><a href="/delete?id=<%= user.id %>" onclick="return confirm('Are you sure?')">Delete</a></td>
+            <td><a href="/edit?id=<%= user.id %>">Edit</a></td>
+            <td></td>
+        </tr>
+        <% }); %>
+    </table>
+    
+</body>
+</html>
+
+
+
+
+
+

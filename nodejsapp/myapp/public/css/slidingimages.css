@@ -1,0 +1,86 @@
+ .carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+  bottom: 3rem;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 25rem;
+  background-color: #777;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 25rem;
+}
+
+.navbar-dark .navbar-brand{
+    color: #fff;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+}
+navbar-dark .navbar-nav .nav-link{
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .active > .nav-link, -navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar{
+    color: rgba(0,0,0,9);
+}  
+  
+.modal_heading{
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    height: 50px;
+    color: #0000FF;
+    font-weight: bold;
+    top: x;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 30px;
+    font-family: big john;
+    border-bottom: 2px solid white;
+} 
+
+    .links, .links:hover{
+  color: #00BFFF;
+  text-decoration: none;
+}  
+    .link, .link:hover{
+  color: black;
+  text-decoration: none;
+}  
+footer{
+    background-color:#696969;
+}
+.col-right{
+  margin-left: 100px;
+  margin-right: 100px;
+  line-height: 30px;
+}
+.col-contact1{
+  margin-left: 100px;
+  margin-top: 50px;
+
+}
+.col-contact2{
+  
+  margin-top: 50px;
+
+}
+h2{
+  font-size: 16px;
+  color: blue;
+}
+
+    
